@@ -1,13 +1,9 @@
 import 'package:flutter/material.dart';
 
-class MyTextField extends StatelessWidget {
-  final Function(String)? onChanged;
+class MyUserTextField extends StatelessWidget {
   final String text;
-  const MyTextField({
-    super.key,
-    required this.text,
-    required this.onChanged,
-  });
+  final TextEditingController controller;
+  const MyUserTextField({super.key, required this.text, required this.controller});
 
   @override
   Widget build(BuildContext context) {
@@ -22,13 +18,15 @@ class MyTextField extends StatelessWidget {
           fontSize: 18,
           fontWeight: FontWeight.bold,
         ),
-        onChanged: onChanged,
-        autofocus: true,
+        controller: controller,
         cursorColor: Colors.grey.shade900,
         decoration: InputDecoration(
           filled: true,
           fillColor: const Color(0xff7dfdd9),
-          icon: const Icon(Icons.arrow_forward, color: Color(0xff7dfdd9)),
+          icon: const Icon(
+            Icons.arrow_forward,
+            color: Color(0xff7dfdd9),
+          ),
           hintText: text,
           hintStyle: const TextStyle(
             letterSpacing: 3,

@@ -1,23 +1,23 @@
 class UserModel {
-  dynamic id;
   String name;
+  int score;
 
   UserModel({
-    this.id,
     required this.name,
+    required this.score,
   });
 
-  factory UserModel.fromMap(Map<String, dynamic> map, {dynamic key}) {
+  factory UserModel.fromMap(Map<String, dynamic> map) {
     return UserModel(
-      id: key ?? map["id"],
       name: map['name'],
+      score: map['score'],
     );
   }
 
-  Map<String, dynamic> toMap() {
+  Map<String, dynamic> toMap({dynamic key}) {
     return {
-      "id": id,
       "name": name,
+      "score": score,
     };
   }
 }

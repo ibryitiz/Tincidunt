@@ -11,8 +11,8 @@ class MyMarqueeText extends StatelessWidget {
       text: TextSpan(text: text),
       style: const TextStyle(
         fontSize: 36,
-        color: Colors.black,
-        letterSpacing: 6,
+        color: Colors.white,
+        letterSpacing: 5,
       ),
       speed: 45,
     );

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-class GetStartedButton extends StatelessWidget {
+class MyButton extends StatelessWidget {
   final Function()? onTap;
   final String text;
-  const GetStartedButton({
+  const MyButton({
     super.key,
     required this.onTap,
     required this.text,
@@ -18,22 +18,22 @@ class GetStartedButton extends StatelessWidget {
           decoration: BoxDecoration(
             boxShadow: [
               BoxShadow(
-                color: Colors.black.withOpacity(0.3), // Gölge rengi
+                color: Colors.white.withOpacity(0.3), // Gölge rengi
                 spreadRadius: 0.5, // Gölgenin yayılma miktarı
                 blurRadius: 8, // Gölgenin bulanıklık miktarı
                 offset: const Offset(0, 5), // Gölgenin x ve y eksenindeki konumu
               ),
             ],
-            color: Colors.blue,
+            color: Colors.white,
             borderRadius: BorderRadius.circular(20),
           ),
           child: Center(
             child: Text(
               text,
-              style: const TextStyle(
+              style: TextStyle(
                 fontWeight: FontWeight.w900,
                 fontSize: 18,
-                color: Colors.white,
+                color: Colors.grey.shade900,
                 letterSpacing: 5,
               ),
             ),

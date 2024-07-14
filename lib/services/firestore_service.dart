@@ -14,4 +14,23 @@ class FirestoreService {
       throw Exception(e.toString());
     }
   }
+
+  Stream<List<UserModel>> getUsers() {
+    try {
+      final collection = _firebaseFirestore.collection("users");
+      return collection
+          .orderBy('score', descending: true) // score'a göre büyükten küçüğe sırala
+          .limit(30)
+          .snapshots()
+          .map((event) {
+        return event.docs
+            .map((e) => UserModel.fromMap(
+                  e.data(),
+                ))
+            .toList();
+      });
+    } catch (e) {
+      throw Stream.error(e);
+    }
+  }
 }
