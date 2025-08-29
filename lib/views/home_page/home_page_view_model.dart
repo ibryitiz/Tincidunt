@@ -97,5 +97,9 @@ class HomePageViewModel with ChangeNotifier {
     }
   }
 
+  String gamze() {
+    return "Gamze";
+  }
+
   TextEditingController get controller => _controller;
 }
